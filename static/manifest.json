@@ -1,0 +1,12 @@
+{
+  "name": "Merry OK - Wedding",
+  "short_name": "MerryOK",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#b33",
+  "icons": [
+    {"src":"/static/icon-192.svg","sizes":"192x192","type":"image/svg+xml"},
+    {"src":"/static/icon-512.svg","sizes":"512x512","type":"image/svg+xml"}
+  ]
+}

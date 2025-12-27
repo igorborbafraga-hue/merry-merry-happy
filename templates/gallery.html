@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="gallery" style="max-width:960px;margin:2.2rem auto;padding:1rem;">
+  <h2>Photo Gallery</h2>
+  {% if images %}
+  <div class="gallery-grid">
+    {% for img in images %}
+      <div class="gallery-item">
+        <a href="{{ img }}" target="_blank"><img src="{{ img }}" alt="photo"></a>
+      </div>
+    {% endfor %}
+  </div>
+  {% else %}
+    <p>No images found. Place image files in <strong>/static/images/</strong>.</p>
+  {% endif %}
+</section>
+{% endblock %}

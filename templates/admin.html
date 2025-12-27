@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="admin-panel">
+  <h2>Admin - RSVPs</h2>
+  <table class="rsvp-table">
+    <thead><tr><th>#</th><th>Name</th><th>Email</th><th>Phone</th><th>Attending</th><th>Status</th><th>Actions</th></tr></thead>
+    <tbody>
+    {% for r in rsvps %}
+      <tr>
+        <td>{{ loop.index0 }}</td>
+        <td>{{ r.name }}</td>
+        <td>{{ r.email }}</td>
+        <td>{{ r.phone }}</td>
+        <td>{{ 'Yes' if r.attending=='yes' else 'No' }}</td>
+        <td>{{ r.status }}</td>
+        <td>
+          <form method="post" action="/admin/approve" style="display:inline">
+            <input type="hidden" name="idx" value="{{ loop.index0 }}">
+            <button type="submit">Approve</button>
+          </form>
+          <form method="post" action="/admin/reject" style="display:inline;margin-left:6px">
+            <input type="hidden" name="idx" value="{{ loop.index0 }}">
+            <button type="submit">Reject</button>
+          </form>
+          {% if r.status != 'pending' %}
+          <form method="post" action="/admin/clear" style="display:inline;margin-left:6px">
+            <input type="hidden" name="idx" value="{{ loop.index0 }}">
+            <button type="submit">Clear</button>
+          </form>
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="7" style="background:#fafafa;padding:6px 10px">
+          <strong>Items brought:</strong>
+          {% set items = r.get('items', []) %}
+          {% if items|length > 0 %}
+            <ul style="margin:6px 0 0 12px;padding:0">
+              {% for it in items %}
+                <li style="font-size:0.95rem">[{{ it.category }}] {{ it.description }} {% if it.quantity %}— {{ it.quantity }}{% endif %}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <span style="color:#666;margin-left:8px">No items recorded.</span>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

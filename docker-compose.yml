@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/app:rw
+      - rsvp-data:/app/rsvps.json
+    environment:
+      - WEDDING_SECRET=change_this_secret
+    restart: unless-stopped
+
+volumes:
+  rsvp-data:
+    name: merryok_rsvp_data

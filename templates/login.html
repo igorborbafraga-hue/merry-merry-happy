@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="gate" style="max-width:720px;margin:2.2rem auto;padding:1.6rem;border:1px solid var(--line);border-radius:12px;">
+  <h1>Login / Check status</h1>
+  <form id="check-status-form">
+    <label>Name<input name="name" required></label>
+    <label>Email<input name="email" type="email" required></label>
+    <button type="submit">Log in / Check</button>
+  </form>
+  <div id="status-message"></div>
+  <p style="margin-top:1rem;color:#666">If you have already been approved, log in here to declare items or access the site.</p>
+</section>
+{% endblock %}

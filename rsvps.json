@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Igor Borba Fraga",
+    "phone": "48999100883",
+    "email": "igorborbafraga@gmail.com",
+    "attending": "yes",
+    "status": "approved",
+    "items": [
+      {
+        "category": "meat",
+        "description": "dgfhjgfd",
+        "quantity": "gggggg"
+      }
+    ]
+  },
+  {
+    "name": "Igor Borba Fraga",
+    "phone": "48999100883",
+    "email": "igorborbafraga@gmail.com",
+    "attending": "yes",
+    "status": "approved",
+    "items": []
+  }
+]

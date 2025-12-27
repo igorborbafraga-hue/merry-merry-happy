@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Pipenv
+Pipfile.lock
+
+# Pytest
+.cache/
+
+# Logs
+*.log
+
+# Node
+node_modules/
+
+# Ignore sensitive files
+.env
+
+# Ignore the GitHub Actions trigger file if used locally
+.gh-action-trigger

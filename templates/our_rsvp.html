@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <h2>Your RSVP</h2>
+  {% if guest %}
+    <p>Name: {{ guest.name }}</p>
+    <p>Email: {{ guest.email }}</p>
+    <p>Phone: {{ guest.phone }}</p>
+    <p>Will attend: {{ 'Yes' if guest.attending=='yes' else 'No' }}</p>
+    <p>Status: {{ guest.status if guest.status else 'pending' }}</p>
+  {% else %}
+    <p>We could not find your RSVP.</p>
+  {% endif %}
+</section>
+{% endblock %}

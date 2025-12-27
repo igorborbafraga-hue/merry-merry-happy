@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="gate" style="max-width:720px;margin:2.2rem auto;padding:1.6rem;border:1px solid var(--line);border-radius:12px;">
+  <h1>Declare items you'll bring</h1>
+  <p>Welcome, {{ guest.name }} — here you can list what you'll bring.</p>
+  <form id="bring-form">
+    <label>Categoria
+      <select name="category">
+        <option value="salads">Saladas</option>
+        <option value="meat">Carne</option>
+        <option value="dessert">Sobremesa</option>
+        <option value="drinks">Bebidas</option>
+        <option value="other">Outros</option>
+      </select>
+    </label>
+    <label>O que vai trazer (descrição)
+      <textarea name="description" required></textarea>
+    </label>
+    <label>Quantidade
+      <input name="quantity" type="text" placeholder="Ex: 2 pratos / 1 travessa">
+    </label>
+    <input type="hidden" name="name" id="bring-name" value="{{ guest.name }}">
+    <input type="hidden" name="email" id="bring-email" value="{{ guest.email }}">
+    <button type="submit">Save item</button>
+  </form>
+  <div id="bring-message"></div>
+  <p style="margin-top:0.8rem"><a href="/home" class="btn-secondary">Go to Home</a></p>
+</section>
+{% endblock %}
